@@ -4,9 +4,9 @@
   "description": "wexo - WhatsApp-first CRM + E-commerce Backend API",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/server.ts",
+    "dev": "node server.js",
     "build": "tsc && tsc-alias",
-    "start": "node dist/server.js",
+    "start": "node server.js",
     "start:prod": "NODE_ENV=production node dist/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
@@ -16,15 +16,14 @@
     "worker": "ts-node src/workers/index.ts",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
-    "format": "prettier --write src/**/*.ts",
-      "start": "node server.js",
-  "dev": "node server.js"
+    "format": "prettier --write src/**/*.ts"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.10.0",
+    "@supabase/supabase-js": "^2.104.1",
     "@types/bcrypt": "^6.0.0",
     "aws-sdk": "^2.1620.0",
     "axios": "^1.15.2",
